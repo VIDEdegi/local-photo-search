@@ -6,7 +6,7 @@ Windows内の写真を日本語の説明や参照画像から探す無料の写�
 
 ## ダウンロード
 
-**[GitHub Releases](https://github.com/VIDEdegi/local-photo-search/releases)** から `Local Photo Search_1.0.0_x64-setup.exe` を取得してください。「Source code」は開発者向けで、通常のインストーラーではありません。初回公開前はダウンロードできません。
+**[GitHub Releases](https://github.com/VIDEdegi/local-photo-search/releases)** から `Local-Photo-Search_1.0.0_x64-setup.exe` を取得してください。「Source code」は開発者向けで、通常のインストーラーではありません。初回公開前はダウンロードできません。
 
 1. セットアップを実行。未署名のためWindows/SmartScreenの警告が出る場合があります。公式配布元とSHA256SUMSを確認してください。
 2. 初回案内でPCを診断し、既存の `.litertlm` モデルを指定するか、配布元・容量・条件を確認して公式モデルを取得。
