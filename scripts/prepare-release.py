@@ -15,6 +15,7 @@ for src in [installer,signature,root/'LICENSE',root/'LICENSE_SCOPE.md',root/'THI
 shutil.make_archive(str(out/'licenses'),'zip',root/'licenses')
 manifest={'version':version,'notes':(root/'docs/RELEASE_NOTES_V1.md').read_text(encoding='utf-8'),'platforms':{'windows-x86_64':{'url':f'https://github.com/VIDEdegi/local-photo-search/releases/download/v{version}/'+asset_name,'signature':signature.read_text(encoding='utf-8').strip()}}}
 (out/'latest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-hashes=''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in sorted(out.iterdir()) if p.is_file() and p.name!='SHA256SUMS')
+names={asset_name,asset_name+'.sig','LICENSE','LICENSE_SCOPE.md','THIRD_PARTY_NOTICES.md','RELEASE_NOTES_V1.md','USER_GUIDE.md','licenses.zip','latest.json'}
+hashes=''.join(hashlib.sha256((out/name).read_bytes()).hexdigest()+'  '+name+'\n' for name in sorted(names))
 (out/'SHA256SUMS').write_text(hashes,encoding='utf-8')
 print(installer.name,installer.stat().st_size,hashlib.sha256(installer.read_bytes()).hexdigest())
