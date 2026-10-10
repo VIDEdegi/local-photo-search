@@ -1,0 +1,27 @@
+name: PR checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  basic:
+    name: basic
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - run: |
+          New-Item -ItemType Directory -Force tmp,dist-worker/media-search-worker | Out-Null
+          python -m pip install Pillow==12.3.0
+          python scripts/test-release-foundation.py
+          cargo check --locked --manifest-path src-tauri/Cargo.toml
+# No secrets, GPU/model downloads, installers, release publication, or PR-target execution.

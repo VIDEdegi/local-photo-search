@@ -1,0 +1,4 @@
+# Keep downloaded notice bytes stable for the recorded SHA-256 values.
+licenses/native/LiteRT-third-party/*/LICENSE -text
+licenses/native/WebView2/RUNTIME_EULA.html -text
+licenses/native/WebView2/RUNTIME_EULA.txt -text

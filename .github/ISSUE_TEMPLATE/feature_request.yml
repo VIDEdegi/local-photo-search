@@ -1,0 +1,15 @@
+name: 機能提案
+description: 困っていることと改善案を伝える
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 困っていること・利用場面
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 提案・代替案
+    validations:
+      required: true

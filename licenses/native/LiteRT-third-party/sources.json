@@ -1,0 +1,92 @@
+[
+  {
+    "component": "abseil",
+    "source_revision": "20260526.0",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/abseil/abseil-cpp/20260526.0/LICENSE",
+    "sha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747",
+    "bytes": 11361,
+    "scope": "v0.18.0 source-declared dependency; not a Windows binary version attestation"
+  },
+  {
+    "component": "sentencepiece",
+    "source_revision": "0.2.2",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/google/sentencepiece/v0.2.2/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358,
+    "scope": "v0.18.0 source-declared dependency; not a Windows binary version attestation"
+  },
+  {
+    "component": "json",
+    "source_revision": "3.12.0",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/nlohmann/json/v3.12.0/LICENSE.MIT",
+    "sha256": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603",
+    "bytes": 1076,
+    "scope": "v0.18.0 source-declared dependency; not a Windows binary version attestation"
+  },
+  {
+    "component": "miniaudio",
+    "source_revision": "0.11.22",
+    "license": "MIT-0 OR Unlicense",
+    "url": "https://raw.githubusercontent.com/mackron/miniaudio/0.11.22/LICENSE",
+    "sha256": "457f1b500e0adf6bc059edddfa78a2f62012e7c3bb43476c20e0bd23b25ba0eb",
+    "bytes": 2597,
+    "scope": "v0.18.0 source-declared dependency; not a Windows binary version attestation"
+  },
+  {
+    "component": "stb",
+    "source_revision": "f58f558c120e9b32c217290b80bad1a0729fbb2c",
+    "license": "MIT OR Unlicense",
+    "url": "https://raw.githubusercontent.com/nothings/stb/f58f558c120e9b32c217290b80bad1a0729fbb2c/LICENSE",
+    "sha256": "bebfe904b14301657e4e5d655c811d51fd31b97c455b9cc2d8600d6bac6cff63",
+    "bytes": 2510,
+    "scope": "v0.18.0 source-declared dependency; not a Windows binary version attestation"
+  },
+  {
+    "component": "skia",
+    "source_revision": "226ae9d866748a2e68b6dbf114b37129c380a298",
+    "license": "BSD-3-Clause",
+    "url": "https://raw.githubusercontent.com/google/skia/226ae9d866748a2e68b6dbf114b37129c380a298/LICENSE",
+    "sha256": "5f787c1dee3c56547f09ccc2906ab5f5293c4d8dd6c8654e573216c38e908dbd",
+    "bytes": 1507,
+    "scope": "v0.18.0 source-declared dependency; not a Windows binary version attestation"
+  },
+  {
+    "component": "TensorFlow",
+    "source_revision": "d9a8da74b4c3de28a39ab34ad007838d6bc30c67",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/tensorflow/tensorflow/d9a8da74b4c3de28a39ab34ad007838d6bc30c67/LICENSE",
+    "sha256": "71c6915d04265772a0339bed47276942c678b45cc01534210ebe6984fd1aec65",
+    "bytes": 13575,
+    "scope": "v0.18.0 source-declared dependency; not a Windows binary version attestation"
+  },
+  {
+    "component": "tokenizers-cpp",
+    "source_revision": "v0.1.1",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/mlc-ai/tokenizers-cpp/v0.1.1/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "bytes": 11357,
+    "scope": "source-declared dependency; source revision is not attested Windows binary revision"
+  },
+  {
+    "component": "Dawn",
+    "source_revision": "v20260720.160313",
+    "license": "BSD-3-Clause AND Apache-2.0 (specified files)",
+    "url": "https://raw.githubusercontent.com/google/dawn/v20260720.160313/LICENSE",
+    "sha256": "0493f897193af1796d5054659f45ec7d4c5af648fa67a99f01d30e55cc805abc",
+    "bytes": 11829,
+    "scope": "source-declared dependency; source revision is not attested Windows binary revision"
+  },
+  {
+    "component": "XNNPACK",
+    "source_revision": "d89ef6669a14db203b3b7935b1b3862cb63fb6df",
+    "license": "BSD-3-Clause",
+    "url": "https://raw.githubusercontent.com/google/XNNPACK/d89ef6669a14db203b3b7935b1b3862cb63fb6df/LICENSE",
+    "sha256": "63f519e15726f4c4f830bd958f694c84fecb4e0a4cacc527d2696bb71ef95ada",
+    "bytes": 1560,
+    "scope": "source-declared dependency; source revision is not attested Windows binary revision"
+  }
+]

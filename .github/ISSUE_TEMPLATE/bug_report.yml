@@ -1,0 +1,23 @@
+name: バグ報告
+description: 再現できる不具合を報告する
+body:
+  - type: markdown
+    attributes:
+      value: 写真、検索語、個人用パス、秘密情報を投稿しないでください。ログは必要箇所だけを伏せ字にしてください。脆弱性はSecurityから非公開報告してください。
+  - type: input
+    id: environment
+    attributes:
+      label: OS・アプリバージョン・GPU
+      placeholder: Windows 11 x64 / 1.0.0 / GPU名・ドライバー / GPUまたはCPUモード
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 再現手順・期待した結果・実際の結果
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: 関係する設定・伏せ字にしたエラー

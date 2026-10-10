@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Local Photo Search",
+  "version": "1.0.0",
+  "identifier": "com.local.embeddinggemma.media-search",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "繝ｭ繝ｼ繧ｫ繝ｫ繝輔か繝域､懃ｴ｢",
+        "width": 1280,
+        "height": 880,
+        "minWidth": 860,
+        "minHeight": 620,
+        "create": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "resources": {
+      "../dist-worker/media-search-worker/": "worker/",
+      "../licenses/": "licenses/",
+      "../THIRD_PARTY_NOTICES.md": "THIRD_PARTY_NOTICES.md",
+      "../docs/USER_GUIDE.md": "USER_GUIDE.md",
+      "../docs/RELEASE_NOTES_V1.md": "RELEASE_NOTES.md",
+      "../LICENSE": "LICENSE",
+      "../LICENSE_SCOPE.md": "LICENSE_SCOPE.md"
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false,
+        "languages": [
+          "Japanese"
+        ],
+        "startMenuFolder": "Local Photo Search",
+        "installerHooks": "windows/hooks.nsh"
+      },
+      "webviewInstallMode": {
+        "type": "embedBootstrapper"
+      }
+    },
+    "icon": [
+      "icons/icon.ico",
+      "icons/icon.png"
+    ],
+    "useLocalToolsDir": true,
+    "licenseFile": "../docs/INSTALLER_NOTICE.txt",
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDc0RTcyQUEzMDc4OUU4RTQKUldUazZJa0hveXJuZE5DemdrMGloV0NRNmVKeXNkVzZIdWMxNUFjSUMwMU1hdGxOUEJyNWgyWDMK",
+      "endpoints": [
+        "https://github.com/VIDEdegi/local-photo-search/releases/latest/download/latest.json"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  }
+}
