@@ -8,12 +8,14 @@ Windows内の写真を日本語の説明や参照画像から探す無料の写�
 
 ## ダウンロード
 
-**[GitHub Releases](https://github.com/VIDEdegi/sakuloca/releases)** から `SakuLoca_1.0.1_x64-setup.exe` を取得してください。「Source code」は開発者向けで、通常のインストーラーではありません。v1.0.1の掲載前は旧名称版が表示されます。
+**[GitHub Releases](https://github.com/VIDEdegi/sakuloca/releases)** から `SakuLoca_1.0.1_x64-setup.exe` を取得してください。「Source code」は開発者向けで、通常のインストーラーではありません。
 
 1. セットアップを実行。未署名のためWindows/SmartScreenの警告が出る場合があります。公式配布元とSHA256SUMSを確認してください。
 2. 初回案内でPCを診断し、既存の `.litertlm` モデルを指定するか、配布元・容量・条件を確認して公式モデルを取得。
 3. 写真フォルダーを登録して「差分更新 / 解析」。
 4. 「海辺の風景」などで日本語検索、または「画像で探す」で類似画像検索。
+
+<small>旧称『Local Photo Search』v1.0.0をご利用の方で、更新・移行に問題がある場合は [GitHub Issues](https://github.com/VIDEdegi/sakuloca/issues) からお問い合わせください。</small>
 
 詳しくは [利用ガイド](docs/USER_GUIDE.md)。モデルは別途準備します。Python・Rust・Node.jsの導入は利用者に不要です。WebView2とMicrosoft Visual C++ v14 x64が不足する場合はMicrosoft公式の導入方法を案内します。
 
