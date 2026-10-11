@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: セキュリティの非公開報告
-    url: https://github.com/VIDEdegi/local-photo-search/security/advisories/new
+    url: https://github.com/VIDEdegi/sakuloca/security/advisories/new
     about: 脆弱性の詳細を一般Issueに投稿しないでください。

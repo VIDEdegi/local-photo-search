@@ -1,11 +1,13 @@
 """Stable release: existing isolated index, installed app, one Japanese query."""
-import hashlib, json, os, socket, sqlite3, subprocess, time, urllib.request
+import base64, hashlib, json, os, socket, sqlite3, subprocess, time, urllib.request
 from contextlib import closing
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
-data = root / 'data/release-tests/rc-audit/ui-runtime'
-exe = root / 'data/release-tests/installed-qa/embeddinggemma-media-search.exe'
+config = json.loads((root / 'src-tauri/tauri.conf.json').read_text(encoding='utf-8'))
+data = Path(os.environ.get('MEDIA_SEARCH_TEST_DATA', str(root / 'data/release-tests/rc-audit/ui-runtime')))
+exe = Path(os.environ.get('MEDIA_SEARCH_TEST_EXE', str(root / 'data/release-tests/installed-qa' / (config.get('mainBinaryName', 'embeddinggemma-media-search') + '.exe'))))
+assert data.resolve().is_relative_to((root / 'data/release-tests').resolve()), 'Isolated data only'
 
 def vectors():
     with closing(sqlite3.connect((data / 'index.sqlite3').as_uri() + '?mode=ro', uri=True)) as db:
@@ -62,13 +64,21 @@ try:
     wait(lambda: js("return document.querySelector('media-search-app').shadowRoot.querySelector('.card-name')?.textContent==='coast.png'"))
     js("document.querySelector('media-search-app').shadowRoot.querySelector('release-controls[mode=assistant]').openHelp()")
     help_text = wait(lambda: js("return document.querySelector('media-search-app').shadowRoot.querySelector('release-controls[mode=assistant]').shadowRoot.querySelector('#help')?.textContent"))
-    assert 'Local Photo Search 1.0.0' in help_text and '1.0.0-dev' not in help_text
-    report = dict(version='1.0.0', installed_app=True, webview2=True, packaged_worker=True,
+    assert f"{config['productName']} {config['version']}" in help_text
+    assert js('return document.title') == config['app']['windows'][0]['title']
+    preferences = request('POST', base + '/execute/async', {'script': "const done=arguments[arguments.length-1];window.__TAURI_INTERNALS__.invoke('update_preferences',{automatic:false}).then(result=>done({result})).catch(e=>done({error:String(e)}));", 'args': []})
+    assert 'error' not in preferences and preferences['result']['automatic'] is False
+    js("document.querySelector('media-search-app').shadowRoot.querySelector('release-controls[mode=assistant]').close('#help')")
+    (root / 'docs/images/search.png').write_bytes(base64.b64decode(request('GET', base + '/screenshot')))
+    report = dict(version=config['version'], product=config['productName'], installed_app=True, webview2=True, packaged_worker=True,
+                  window_title=True, update_preferences_saved=True,
                   japanese_search_ui='海辺の風景 -> coast.png', stable_about=True,
                   reindex_called=False, vectors_sha256=before, vectors_unchanged=vectors() == before,
                   clean_windows_test=False)
     assert report['vectors_unchanged']
-    (root / 'data/release-tests/v1-smoke.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+    report_path = Path(os.environ.get('MEDIA_SEARCH_TEST_REPORT', str(root / f"data/release-tests/{config['productName'].replace(' ', '-')}-{config['version']}-smoke.json")))
+    assert report_path.resolve().is_relative_to((root / 'data/release-tests').resolve())
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
     print(json.dumps(report, ensure_ascii=False, indent=2), flush=True)
 finally:
     if base:

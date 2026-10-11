@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Local Photo Search",
-  "version": "1.0.0",
+  "productName": "SakuLoca",
+  "version": "1.0.1",
   "identifier": "com.local.embeddinggemma.media-search",
   "build": {
     "beforeDevCommand": "npm run dev",
@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "繝ｭ繝ｼ繧ｫ繝ｫ繝輔か繝域､懃ｴ｢",
+        "title": "SakuLoca（サクロカ）",
         "width": 1280,
         "height": 880,
         "minWidth": 860,
@@ -35,9 +35,9 @@
       "../licenses/": "licenses/",
       "../THIRD_PARTY_NOTICES.md": "THIRD_PARTY_NOTICES.md",
       "../docs/USER_GUIDE.md": "USER_GUIDE.md",
-      "../docs/RELEASE_NOTES_V1.md": "RELEASE_NOTES.md",
       "../LICENSE": "LICENSE",
-      "../LICENSE_SCOPE.md": "LICENSE_SCOPE.md"
+      "../LICENSE_SCOPE.md": "LICENSE_SCOPE.md",
+      "../docs/RELEASE_NOTES_V1_0_1.md": "RELEASE_NOTES.md"
     },
     "windows": {
       "nsis": {
@@ -46,8 +46,10 @@
         "languages": [
           "Japanese"
         ],
-        "startMenuFolder": "Local Photo Search",
-        "installerHooks": "windows/hooks.nsh"
+        "startMenuFolder": "SakuLoca",
+        "installerHooks": "windows/hooks.nsh",
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico"
       },
       "webviewInstallMode": {
         "type": "embedBootstrapper"
@@ -59,17 +61,21 @@
     ],
     "useLocalToolsDir": true,
     "licenseFile": "../docs/INSTALLER_NOTICE.txt",
-    "createUpdaterArtifacts": true
+    "createUpdaterArtifacts": true,
+    "publisher": "VIDEdegi",
+    "homepage": "https://github.com/VIDEdegi/sakuloca",
+    "copyright": "Copyright 2026 VIDEdegi"
   },
   "plugins": {
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDc0RTcyQUEzMDc4OUU4RTQKUldUazZJa0hveXJuZE5DemdrMGloV0NRNmVKeXNkVzZIdWMxNUFjSUMwMU1hdGxOUEJyNWgyWDMK",
       "endpoints": [
-        "https://github.com/VIDEdegi/local-photo-search/releases/latest/download/latest.json"
+        "https://github.com/VIDEdegi/sakuloca/releases/latest/download/latest.json"
       ],
       "windows": {
         "installMode": "passive"
       }
     }
-  }
+  },
+  "mainBinaryName": "SakuLoca"
 }

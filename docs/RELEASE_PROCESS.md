@@ -2,13 +2,13 @@
 
 ## GitHubの初回設定
 
-`VIDEdegi/local-photo-search` をまずPrivateで作成します。元の開発履歴は個人用メールを含むため公開せず、検査済みの公開用履歴だけをPushします。
+公開済みの `VIDEdegi/local-photo-search` を、所有者承認後に `VIDEdegi/sakuloca` へ改名します。別リポジトリを新規作成せず、既存Release・Git履歴を保持します。元の開発履歴は個人用メールを含むため公開せず、検査済みの公開用履歴だけをPushします。
 
 - Issues ON、Discussions/Wiki/Projects/自動マージ OFF。
 - Description: Windows向けの無料ローカルAI写真検索アプリ。
 - Topics: windows, tauri, photo-search, local-ai, embeddinggemma。
 - Homepage: https://videdegi.com （紹介ページ自体は別途準備）。
-- mainのRuleset: force push/削除禁止、PR経由、必要チェック `basic`。レビュー必須数は0。管理者の通常PRマージを許可し、緊急時用の管理者バイパスを設定。
+- mainのRuleset: force push/削除禁止、PR経由、必要チェック `basic`。レビュー必須数は0。管理者もPR経由でマージします（必須レビュー0、バイパスなし）。
 - Actionsは読み取り専用。Fork PRのSecrets/書き込み権限は許可しない。
 - Dependabot alerts、Secret scanning/Push protection、Private vulnerability reportingを利用できる範囲でON。Dependabotの定期PR設定はまだ追加しない。
 - CIが初回実行された後に必須チェックを設定。Privateで使えない保護はPublic化直後に適用。
