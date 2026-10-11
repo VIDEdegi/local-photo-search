@@ -100,7 +100,7 @@
 
 !macro NSIS_HOOK_PREINSTALL
   ${IfNot} ${RunningX64}
-    MessageBox MB_ICONSTOP "Local Photo Searchには64ビット版Windowsが必要です。" /SD IDOK
+    MessageBox MB_ICONSTOP "SakuLocaには64ビット版Windowsが必要です。" /SD IDOK
     Abort
   ${EndIf}
   ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows NT\CurrentVersion" "CurrentBuildNumber"
@@ -127,8 +127,8 @@
   !insertmacro LPS_REFUSE_RUNNING
   ; Remove only our optional login entry; preserve all user data and original photos.
   !if "${BUNDLEID}" == "com.local.embeddinggemma.media-search"
-    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "LocalPhotoSearch"
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SakuLoca"
   !else
-    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "LocalPhotoSearchQA"
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SakuLocaQA"
   !endif
 !macroend

@@ -1,4 +1,6 @@
-# Local Photo Search — ローカルフォト検索
+# SakuLoca（サクロカ）
+
+名前の由来は「サクッと、ローカル、サーチ。」開発元はVIDEdegi（ビデデジ）です。
 
 Windows内の写真を日本語の説明や参照画像から探す無料の写真検索アプリです。EmbeddingGemma 2によるAI処理はPC内で行い、写真・検索語を外部へ送信しません。
 
@@ -6,12 +8,14 @@ Windows内の写真を日本語の説明や参照画像から探す無料の写�
 
 ## ダウンロード
 
-**[GitHub Releases](https://github.com/VIDEdegi/local-photo-search/releases)** から `Local-Photo-Search_1.0.0_x64-setup.exe` を取得してください。「Source code」は開発者向けで、通常のインストーラーではありません。初回公開前はダウンロードできません。
+**[GitHub Releases](https://github.com/VIDEdegi/sakuloca/releases)** から `SakuLoca_1.0.1_x64-setup.exe` を取得してください。「Source code」は開発者向けで、通常のインストーラーではありません。
 
 1. セットアップを実行。未署名のためWindows/SmartScreenの警告が出る場合があります。公式配布元とSHA256SUMSを確認してください。
 2. 初回案内でPCを診断し、既存の `.litertlm` モデルを指定するか、配布元・容量・条件を確認して公式モデルを取得。
 3. 写真フォルダーを登録して「差分更新 / 解析」。
 4. 「海辺の風景」などで日本語検索、または「画像で探す」で類似画像検索。
+
+<small>旧称『Local Photo Search』v1.0.0をご利用の方で、更新・移行に問題がある場合は [GitHub Issues](https://github.com/VIDEdegi/sakuloca/issues) からお問い合わせください。</small>
 
 詳しくは [利用ガイド](docs/USER_GUIDE.md)。モデルは別途準備します。Python・Rust・Node.jsの導入は利用者に不要です。WebView2とMicrosoft Visual C++ v14 x64が不足する場合はMicrosoft公式の導入方法を案内します。
 
@@ -46,10 +50,10 @@ Windows内の写真を日本語の説明や参照画像から探す無料の写�
 
 ## 報告・開発・ライセンス
 
-[Issues](https://github.com/VIDEdegi/local-photo-search/issues) でバグ・提案を受け付けます。写真・個人用パスを投稿せず、ログは必要箇所を伏せ字にしてください。脆弱性は [非公開報告](SECURITY.md) を使ってください。
+[Issues](https://github.com/VIDEdegi/sakuloca/issues) でバグ・提案を受け付けます。写真・個人用パスを投稿せず、ログは必要箇所を伏せ字にしてください。脆弱性は [非公開報告](SECURITY.md) を使ってください。
 
 [CONTRIBUTING](CONTRIBUTING.md)、[行動指針](CODE_OF_CONDUCT.md)、[開発環境](docs/SETUP.md) を参照してください。Tauri 2 / Rust / Lit / TypeScript / SQLite / Python LiteRT-LMで構成しています。PRのCIは型・軽量安全性テスト・Rustチェックで、モデル/GPUは不要です。
 
 独自コードは **Apache-2.0**。適用範囲は [LICENSE_SCOPE](LICENSE_SCOPE.md)、第三者の条件は [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md) と `licenses/` を参照してください。AIモデルは別の条件で取得します。
 
-写真検索を優先し、音声・動画は将来のアップデートです。[リリース運用](docs/RELEASE_PROCESS.md)、[v1.0.0リリースノート](docs/RELEASE_NOTES_V1.md) を参照してください。
+写真検索を優先し、音声・動画は将来のアップデートです。[リリース運用](docs/RELEASE_PROCESS.md)、[v1.0.1リリースノート](docs/RELEASE_NOTES_V1_0_1.md) を参照してください。

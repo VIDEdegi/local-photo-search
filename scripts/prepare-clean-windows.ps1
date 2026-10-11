@@ -6,7 +6,7 @@ $inputRoot=Join-Path $testRoot 'input'
 $resultRoot=Join-Path $testRoot 'results'
 New-Item -ItemType Directory -Path $inputRoot,$resultRoot -Force | Out-Null
 $version=(Get-Content (Join-Path $taskRoot 'src-tauri/tauri.conf.json') -Raw | ConvertFrom-Json).version
-$installer=Join-Path $taskRoot "target/release/bundle/nsis/Local Photo Search_${version}_x64-setup.exe"
+$installer=Join-Path $taskRoot "target/release/bundle/nsis/SakuLoca_${version}_x64-setup.exe"
 Copy-Item -LiteralPath $installer -Destination $inputRoot
 $oldInstaller=Join-Path $taskRoot 'target/release/bundle/nsis/Local Photo Search_0.1.1_x64-setup.exe'
 if(Test-Path -LiteralPath $oldInstaller){Copy-Item -LiteralPath $oldInstaller -Destination $inputRoot}

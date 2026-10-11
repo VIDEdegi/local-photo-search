@@ -342,7 +342,7 @@ async fn desktop_preferences(
                 "add",
                 "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
                 "/v",
-                "LocalPhotoSearch",
+                "SakuLoca",
                 "/t",
                 "REG_SZ",
                 "/d",
@@ -363,7 +363,7 @@ async fn desktop_preferences(
                 "delete",
                 "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
                 "/v",
-                "LocalPhotoSearch",
+                "SakuLoca",
                 "/f",
             ]);
         }
@@ -435,7 +435,7 @@ fn open_reference(kind: String) -> Result<(), String> {
     let url = match kind.as_str() {
         "model" => "https://huggingface.co/litert-community/embeddinggemma-2-740m-litert-lm",
         "license" => "https://huggingface.co/google/embeddinggemma-2",
-        "releases" => "https://github.com/VIDEdegi/local-photo-search/releases",
+        "releases" => "https://github.com/VIDEdegi/sakuloca/releases",
         "webview" => "https://developer.microsoft.com/microsoft-edge/webview2/",
         _ => return Err("許可されていないリンクです".into()),
     };
@@ -476,7 +476,7 @@ fn main() {
         Ok(data) => data,
         Err(error) => {
             rfd::MessageDialog::new()
-                .set_title("ローカルフォト検索を起動できません")
+                .set_title("SakuLocaを起動できません")
                 .set_description(error)
                 .set_level(rfd::MessageLevel::Error)
                 .show();
@@ -537,7 +537,7 @@ fn main() {
             let menu = Menu::with_items(app, &[&show, &pause, &resume, &quit])?;
             TrayIconBuilder::with_id("main-tray")
                 .icon(app.default_window_icon().unwrap().clone())
-                .tooltip("ローカルフォト検索 · 待機中")
+                .tooltip("SakuLoca · 待機中")
                 .menu(&menu)
                 .show_menu_on_left_click(false)
                 .on_menu_event(|app, event| match event.id.as_ref() {
@@ -619,7 +619,7 @@ fn main() {
                         "AI処理中 · GPU/CPUを使用しています"
                     };
                     if let Some(tray) = handle.tray_by_id("main-tray") {
-                        let _ = tray.set_tooltip(Some(format!("ローカルフォト検索 · {state}")));
+                        let _ = tray.set_tooltip(Some(format!("SakuLoca · {state}")));
                     }
                 }
             });
@@ -642,7 +642,7 @@ fn main() {
         Ok(app) => app,
         Err(error) => {
             rfd::MessageDialog::new()
-                .set_title("ローカルフォト検索を起動できません")
+                .set_title("SakuLocaを起動できません")
                 .set_description(error.to_string())
                 .set_level(rfd::MessageLevel::Error)
                 .show();
