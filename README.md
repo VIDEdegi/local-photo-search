@@ -8,6 +8,8 @@ Windows内の写真を日本語の説明や参照画像から探す無料の写�
 
 ## ダウンロード
 
+インストールから初回設定・解析・検索まで、スクリーンショット8枚付きで紹介した [公式ブログの日本語解説記事](https://blog.videdegi.com/2026/10/sakuloca.html) もご覧ください。
+
 **[GitHub Releases](https://github.com/VIDEdegi/sakuloca/releases)** から `SakuLoca_1.0.1_x64-setup.exe` を取得してください。「Source code」は開発者向けで、通常のインストーラーではありません。
 
 1. セットアップを実行。未署名のためWindows/SmartScreenの警告が出る場合があります。公式配布元とSHA256SUMSを確認してください。
